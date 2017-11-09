@@ -1,0 +1,7 @@
+D:\jas\Vikram-Svelte\Data\Data\WindowsFormsApplication2\bin\Debug\WindowsFormsApplication2.exe
+D:\jas\Vikram-Svelte\Data\Data\WindowsFormsApplication2\bin\Debug\WindowsFormsApplication2.pdb
+D:\jas\Vikram-Svelte\Data\Data\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.Form1.resources
+D:\jas\Vikram-Svelte\Data\Data\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.Properties.Resources.resources
+D:\jas\Vikram-Svelte\Data\Data\WindowsFormsApplication2\obj\Debug\Avionic XmlGenerator.csproj.GenerateResource.Cache
+D:\jas\Vikram-Svelte\Data\Data\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.exe
+D:\jas\Vikram-Svelte\Data\Data\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.pdb

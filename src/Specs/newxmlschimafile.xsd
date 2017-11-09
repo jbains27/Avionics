@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="ATA_InformationSet">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" name="ReliabilityData">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ShopFindings">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="HDR_Segment">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="CHG" type="xs:string" />
+                          <xs:element name="ROC" type="xs:unsignedShort" />
+                          <xs:element name="RDT" type="xs:date" />
+                          <xs:element name="RSD" type="xs:date" />
+                          <xs:element name="OPR" type="xs:string" />
+                          <xs:element name="RON" type="xs:string" />
+                   
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element maxOccurs="unbounded" name="ShopFindingsDetails">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="RCS_Segment">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="SFI" type="xs:unsignedShort" />
+                                <xs:element name="MRD" type="xs:date" />
+                                <xs:element name="MFR" type="xs:unsignedShort" />
+                                <xs:element name="MPN" type="xs:string" />
+                                <xs:element name="SER" type="xs:string" />
+                                <xs:element name="RRC" type="xs:string" />
+                                <xs:element name="FFC" type="xs:string" />
+                                <xs:element name="FFI" type="xs:string" />
+                                <xs:element name="FCR" type="xs:string" />
+                                <xs:element name="FAC" type="xs:string" />
+                                <xs:element name="FBC" type="xs:string" />
+                                <xs:element name="FHS" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="SAS_Segment">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="INT" type="xs:string" />
+                                <xs:element name="SHL" type="xs:string" />
+                                <xs:element name="RFI" type="xs:unsignedByte" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="SUS_Segment">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="SHD" type="xs:dateTime"/>
+                                <xs:element name="MFR" type="xs:double"/>
+                                <xs:element name="MPN" type="xs:string" />
+                                <xs:element name="SER" type="xs:string"/>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="version" type="xs:decimal" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="id" type="xs:string" use="required" />
+      <xs:attribute name="version" type="xs:decimal" use="required" />
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
