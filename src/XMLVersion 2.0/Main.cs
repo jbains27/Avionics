@@ -157,11 +157,12 @@ namespace WindowsFormsApplication2
 
         internal void GenerateXML(DateTime StartDate, DateTime EndDate)
         {
-            try
-            {
+            
                 this.sd = string.Format("{0:MM/dd/yyyy}", (object)StartDate);
                 this.ed = string.Format("{0:MM/dd/yyyy}", (object)EndDate);
                 OleDbConnection oleDbConnection = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;data source='" + this.fpath + "';Jet OLEDB:Database Password=''");
+            try
+            {
                 oleDbConnection.Open();
 
                 //OleDbDataReader oleDbDataReader = new OleDbCommand("SELECT DISTINCT OprCode as OPR,Customer FROM tblRepairHistory WHERE SerialNumber LIKE 'cj%' AND OprCode not in(NULL,'0') AND DateReceived Between #" + this.sd + "# AND #" + this.ed + "# ", oleDbConnection).ExecuteReader();
@@ -221,6 +222,10 @@ namespace WindowsFormsApplication2
             {
                 throw ex;
             }
+            finally
+            {
+               oleDbConnection.Close();
+            }
         }
 
         internal string GenerateShopFindingsDetails(string OprCode, string customer, OleDbConnection conn)
@@ -237,6 +242,7 @@ namespace WindowsFormsApplication2
                         stringBuilder.Append("<ShopFindingsDetails>");
                         stringBuilder.Append(this.GenerateRCS(oleDbDataReader.GetValue(0).ToString(), conn));
                         stringBuilder.Append(this.GenerateSAS(oleDbDataReader.GetValue(0).ToString(), conn));
+                        stringBuilder.Append(this.GenerateSUS(oleDbDataReader.GetValue(0).ToString(), conn));
                         stringBuilder.Append(this.GenerateRLS(oleDbDataReader.GetValue(0).ToString(), conn));
                         stringBuilder.Append(this.GenerateAID(oleDbDataReader.GetValue(0).ToString(), conn));
                         stringBuilder.Append("</ShopFindingsDetails>");
